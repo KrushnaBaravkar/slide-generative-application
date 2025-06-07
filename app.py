@@ -33,4 +33,19 @@ with st.form("user_inputs"):
         # 
 
         # ferther part will be done in the bases of scrept_generator_function.
+        generated_scrept = "The Taj Mahal is a white marble mausoleum in Agra, India, built by the Mughal emperor Shah Jahan as a memorial for his wife, Mumtaz Mahal. It's considered a masterpiece of Indo-Islamic architecture and one of the world's most admired structures. The Taj Mahal is a UNESCO World Heritage Site and attracts millions of visitors annually."
+        status.update(label="✅ Script generated!", state="complete")
+
+        # --- SCRIPT DISPLAY SECTION ---
+        stdivider()
+        st.subheader("📜 Your Generated Script")
+
+        st.write(generated_script)
+        # --- DOWNLOAD BUTTON ---
+        st.download_button(
+            label="📥 Download Script",
+            data=generated_script,
+            file_name=f"script_{topic[:20]}.txt",
+            mime="text/plain"
+        )
 

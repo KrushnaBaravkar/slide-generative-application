@@ -1,6 +1,6 @@
 
 import streamlit as st
-from scrept_generator import generator
+#from scrept_generator import generator
 
 # --- INPUT MODULE ---
 st.title("📝 Script & PPT Generator")
@@ -29,7 +29,7 @@ with st.form("user_inputs"):
         prompt = f"Create a {tone.lower()} script about {topic} for {audience}, {word_count} words."
         
         # call the generator function
-        generated_scrept = scrept_generator(prompt)
+        #generated_scrept = scrept_generator(prompt)
         # 
 
         # ferther part will be done in the bases of scrept_generator_function.

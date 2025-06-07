@@ -34,7 +34,7 @@ with st.form("user_inputs"):
 
         # ferther part will be done in the bases of scrept_generator_function.
         generated_scrept = "The Taj Mahal is a white marble mausoleum in Agra, India, built by the Mughal emperor Shah Jahan as a memorial for his wife, Mumtaz Mahal. It's considered a masterpiece of Indo-Islamic architecture and one of the world's most admired structures. The Taj Mahal is a UNESCO World Heritage Site and attracts millions of visitors annually."
-        status.update(label="✅ Script generated!", state="complete")
+        #status.update(label="✅ Script generated!", state="complete")
 
         # --- SCRIPT DISPLAY SECTION ---
         stdivider()

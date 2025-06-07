@@ -1,51 +1,29 @@
-
 import streamlit as st
-#from scrept_generator import generator
 
-# --- INPUT MODULE ---
-st.title("📝 Script & PPT Generator")
-st.markdown("Enter your presentation details below:")
+st.title("🎤 Script & Slideshow Generator")
+st.divider()
+st.header("📥 Enter Presentation Details")
 
-# Input Fields (Left Column)
-with st.form("user_inputs"):
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Required fields
-        topic = st.text_input("Topic*", placeholder="E.g., Global Warming")
-        audience = st.selectbox("Audience*", ["Students", "Faculty", "General Public"])
-        
-    with col2:
-        # Optional fields
-        tone = st.radio("Tone*", ["Formal", "Casual", "Persuasive"], horizontal=True)
-        word_count = st.slider("Word Count", 100, 1000, 200)
-    
-    # Validation + Submit Button
-    submitted = st.form_submit_button("Generate Script")
-    if submitted and not topic:
-        st.error("Please enter a topic!")
-    elif submitted:
-        st.success("Inputs captured!")
-        prompt = f"Create a {tone.lower()} script about {topic} for {audience}, {word_count} words."
-        
-        # call the generator function
-        # generated_scrept = scrept_generator(prompt)
-        # 
+# Inputs
+topic = st.text_input("Topic", placeholder="e.g. Climate Change")
+audience = st.selectbox("Select Audience", ["School Students", "College Students", "General Public", "Experts"])
+tone = st.selectbox("Select Tone", ["Formal", "Informal", "Inspiring", "Neutral"])
+word_count = st.number_input("Desired Length (in words)", min_value=100, max_value=2000, step=50, value=500)
 
-        # ferther part will be done in the bases of scrept_generator_function.
-        generated_scrept = "The Taj Mahal is a white marble mausoleum in Agra, India, built by the Mughal emperor Shah Jahan as a memorial for his wife, Mumtaz Mahal. It's considered a masterpiece of Indo-Islamic architecture and one of the world's most admired structures. The Taj Mahal is a UNESCO World Heritage Site and attracts millions of visitors annually."
-        #status.update(label="✅ Script generated!", state="complete")
+# Prompt preview
+st.divider()
+if st.button("🧠 Generate Prompt"):
+    prompt = f"Generate a {tone.lower()} script of about {word_count} words for a presentation on '{topic}' for {audience.lower()}."
+    st.subheader("📜 Formatted Prompt")
+    st.write(prompt)
 
-        # --- SCRIPT DISPLAY SECTION ---
-        stdivider()
-        st.subheader("📜 Your Generated Script")
+    # Simulated Output
+    st.subheader("📝 Script Output (Placeholder)")
+    st.text_area("Script", value="This is a sample script based on your input...", height=250)
 
-        st.write(generated_script)
-        # --- DOWNLOAD BUTTON ---
-        st.download_button(
-            label="📥 Download Script",
-            data=generated_script,
-            file_name=f"script_{topic[:20]}.txt",
-            mime="text/plain"
-        )
+    st.subheader("📊 Slide Preview (Placeholder)")
+    st.markdown("- Slide 1: Introduction\n- Slide 2: Problem Statement\n- Slide 3: Conclusion")
 
+    # Download Buttons (Simulated)
+    st.download_button("⬇️ Download Script (.txt)", data="Your generated script...", file_name="script.txt")
+    st.download_button("⬇️ Download Slides (.pptx)", data=b"FAKEPPTDATA", file_name="slides.pptx")

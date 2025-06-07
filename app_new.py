@@ -1,4 +1,3 @@
-
 import streamlit as st
 #from generator import generate_script  # Import your generator function
 
@@ -42,7 +41,7 @@ elif submitted:
     
     # Option 2: In a scrollable expander
     #with st.expander("View Full Script", expanded=True):
-        st.write(generated_script)
+    #    st.write(generated_script)
     
     # Option 3: With markdown formatting
     #st.markdown(generated_script)

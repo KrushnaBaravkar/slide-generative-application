@@ -1,4 +1,5 @@
 import streamlit as st
+from llama_agent import generate_script_with_huggingface
 
 st.title("🎤 Script & Slideshow Generator")
 st.divider()
@@ -16,10 +17,13 @@ if st.button("🧠 Generate Prompt"):
     prompt = f"Generate a {tone.lower()} script of about {word_count} words for a presentation on '{topic}' for {audience.lower()}."
     st.subheader("📜 Formatted Prompt")
     st.write(prompt)
+    
+    with st.spinner("LLaMA is generating your script..."):
+        result =generate_script_with_huggingface(prompt)  # 🔥 Calling your API function
 
     # Simulated Output
     st.subheader("📝 Script Output (Placeholder)")
-    st.text_area("Script", value="This is a sample script based on your input...", height=250)
+    st.text_area("Script", value=result, height=250)
 
     st.subheader("📊 Slide Preview (Placeholder)")
     st.markdown("- Slide 1: Introduction\n- Slide 2: Problem Statement\n- Slide 3: Conclusion")

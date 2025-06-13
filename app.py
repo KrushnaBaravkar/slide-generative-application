@@ -22,7 +22,7 @@ if st.button("🧠 Generate Prompt"):
         result = script_generator(prompt)  # 🔥 Calling your API function
 
     # Simulated Output
-    st.subheader("📝 Script Output (Placeholder)")
+    st.subheader("📝 Script Output (result)")
     st.text_area("Script", value=result, height=250)
 
     st.subheader("📊 Slide Preview (Placeholder)")

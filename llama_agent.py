@@ -2,7 +2,7 @@ import requests
 import json
 
 def script_generator(prompt):
-    url = "http://localhost:11434/api/chat"
+    url = "http://localhost:11434"
 
     payload = {
         "model": "llama3.2",  # Or "llama3.2" if that's your model name

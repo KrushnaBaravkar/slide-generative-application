@@ -1,7 +1,7 @@
 import requests
 
 def script_generator(prompt):
-    url = "http://localhost:11434/api/chat"
+    url = "http://127.0.0.1:11434 /api/chat"
 
     payload = {
         "model": "llama3.2",  # or "llama3" if that's what you pulled

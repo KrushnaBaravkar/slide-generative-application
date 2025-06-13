@@ -1,15 +1,14 @@
 import requests
-import json
 
 def script_generator(prompt):
     url = "http://localhost:11434/api/chat"
 
     payload = {
-        "model": "llama3.2",  # Or "llama3.2" if that's your model name
+        "model": "llama3.2",  # or "llama3" if that's what you pulled
         "messages": [
             {"role": "user", "content": prompt}
         ],
-        "stream": False  # Disable streaming for simplicity
+        "stream": False
     }
 
     try:
@@ -21,3 +20,5 @@ def script_generator(prompt):
             return f"Error {response.status_code}: {response.text}"
     except Exception as e:
         return f"Exception occurred: {e}"
+
+print(script_generator("Write a motivational speech for students."))
